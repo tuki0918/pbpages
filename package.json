@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tuki0918/pbpages/issues"
   },
-  "homepage": "https://github.com/tuki0918/pbpages#readme"
+  "homepage": "https://github.com/tuki0918/pbpages#readme",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
