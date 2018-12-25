@@ -3,19 +3,19 @@ workflow "Main" {
   resolves = ["App Deploy"]
 }
 
-action "Package Install" {
-  uses = "./.github/environment"
-  args = ["install"]
-}
-
 action "Deploy Branch Filter" {
-  needs = "Package Install"
   uses = "actions/bin/filter@master"
   args = ["branch", "master"]
 }
 
-action "App Deploy" {
+action "Package Install" {
   needs = "Deploy Branch Filter"
+  uses = "./.github/environment"
+  args = ["install"]
+}
+
+action "App Deploy" {
+  needs = "Package Install"
   uses = "./.github/environment"
   args = ["run", "deploy"]
 }
