@@ -18,4 +18,9 @@ action "App Deploy" {
   needs = "Package Install"
   uses = "./.github/environment"
   args = ["run", "deploy"]
+  secrets = ["GITHUB_TOKEN"]
+  env = {
+    GIT_COMMITTER_NAME = "github ci"
+    GIT_COMMITTER_EMAIL = "github+ci@example.com"
+  }
 }
