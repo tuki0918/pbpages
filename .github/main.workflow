@@ -4,7 +4,7 @@ workflow "Main" {
 }
 
 action "Package Install" {
-  uses = "actions/npm@master"
+  uses = "./.github/environment"
   args = ["install"]
 }
 
@@ -16,6 +16,6 @@ action "Deploy Branch Filter" {
 
 action "App Deploy" {
   needs = "Deploy Branch Filter"
-  uses = "actions/npm@master"
+  uses = "./.github/environment"
   args = ["run", "deploy"]
 }
