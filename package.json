@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./__dist__",
-    "build": "npm run clean && parcel build ./src/index.html --out-dir ./__dist__ --public-url ./",
+    "build": "parcel build ./src/index.html --out-dir ./__dist__ --public-url ./",
     "build:watch": "parcel watch ./src/index.html --out-dir ./__dist__ --public-url ./",
     "deploy": "npm run build && gh-pages -d __dist__"
   },
